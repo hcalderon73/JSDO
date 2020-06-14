@@ -307,7 +307,9 @@ limitations under the License.
                     try {
                         var callback = function (params, result, info) {
                             params = progress.util.Deferred.getParamObject(params, result, info);
-                            afterRefreshCheck(params.provider, params.result, params.info);
+                            if (params.result === 1) {
+                             afterRefreshCheck(params.provider, params.result, params.info);
+                            } 
                         };
                         // finally
                         this.refresh()
